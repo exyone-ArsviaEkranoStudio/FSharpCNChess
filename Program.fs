@@ -62,7 +62,7 @@ let initialBoard: Board =
     
     (redPieces @ BluePieces) |> Map.ofList
 
-// 获取棋子的显示字符
+// 定义棋子字符
 let getPieceDisplay piece =
     match piece.Type, piece.Color with
     | General, Red -> "帅"
@@ -124,7 +124,7 @@ let isGameOver board =
     
     not (hasGeneral Red) || not (hasGeneral Blue)
 
-// 主游戏循环
+// 游戏循环
 let rec gameLoop board currentPlayer =
     printBoard board
     printfn "%s方走棋，请输入移动（格式：行 列 行 列，例如：0 1 2 3）:" (if currentPlayer = Red then "红" else "黑(蓝)")
